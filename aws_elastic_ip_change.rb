@@ -19,7 +19,7 @@ current_instance = ec2.describe_addresses({ filters: [{ name: "instance-id", val
 new_elastic_ip = ec2.allocate_address({ domain: "vpc" })
 
 # connect new elastic ip
-associate_address_result = ec2.associate_address({
+ec2.associate_address({
   allocation_id: new_elastic_ip.allocation_id,
   instance_id: instance_id,
 })
