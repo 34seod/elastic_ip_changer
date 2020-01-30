@@ -2,7 +2,7 @@ require 'aws-sdk'
 
 # config setting
 Aws.config.update(
-  region: 'us-west-2',
+  region: 'your region',
   credentials: Aws::Credentials.new("your access id", "your access password"),
 )
 
@@ -25,5 +25,5 @@ associate_address_result = ec2.associate_address({
 # delete prev elastic ip
 ec2.release_address({ allocation_id: current_instance.allocation_id })
 
-# 新しい ip
+# get new elastic ip
 p new_elastic_ip.public_ip
