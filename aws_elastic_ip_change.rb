@@ -1,13 +1,15 @@
 require 'aws-sdk'
 
+ec2_region = "your region"
+
 # config setting
 Aws.config.update(
-  region: 'your region',
+  region: ec2_region,
   credentials: Aws::Credentials.new("your access id", "your access password"),
 )
 
 # EC2 Client
-ec2 = Aws::EC2::Client.new(region: 'us-west-2')
+ec2 = Aws::EC2::Client.new(region: ec2_region)
 
 # current elastic ip
 instance_id = "your ec2 instance id"
